@@ -9,7 +9,6 @@ Release: %{release}
 License: Public Domain
 Group: Monitoring
 Source: http://www.iozone.org/src/current/%{name}_%{version}.tar.bz2
-Buildroot: %{_tmppath}/%{name}-buildroot
 URL: http://www.iozone.org/
 Obsoletes: iozone
 Provides: iozone
