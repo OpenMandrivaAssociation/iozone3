@@ -1,6 +1,6 @@
 %define name iozone3
 %define version 287
-%define release %mkrel 1
+%define release %mkrel 3
 
 Summary: Filesystem characterization & benchmark tool
 Name: %{name}
