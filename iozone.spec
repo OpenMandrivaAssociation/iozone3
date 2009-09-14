@@ -2,17 +2,17 @@
 %define version 287
 %define release %mkrel 4
 
-Summary: Filesystem characterization & benchmark tool
-Name: %{name}
-Version: %{version}
-Release: %{release}
-License: Public Domain
-Group: Monitoring
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Source: http://www.iozone.org/src/current/%{name}_%{version}.tar.bz2
-URL: http://www.iozone.org/
-Obsoletes: iozone
-Provides: iozone
+Summary:	Filesystem characterization & benchmark tool
+Name:		iozone3
+Version:	326
+Release:	%mkrel 1
+License:	Public Domain
+Group:		Monitoring
+URL:		http://www.iozone.org/
+Source0:	http://www.iozone.org/src/current/%{name}_%{version}.tar.bz2
+Obsoletes:	iozone < %{version}
+Provides:	iozone
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This program allows one to characterize the filesystem performance
@@ -20,37 +20,31 @@ of vendors platform. It supports single stream, throughput,
 pthreads, async I/O and much more.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -n %{name}_%{version}
 
-%build 
+%build
 cd src/current
-make linux 
+%make linux CFLAGS="%{optflags}" LDFLAGS="%{ldflags}"
 
 %install
-cd $RPM_BUILD_DIR/%{name}_%version/src/current/
-install -m 755 -d $RPM_BUILD_ROOT%{_bindir}
-install -m 755 iozone $RPM_BUILD_ROOT%{_bindir}
-install -m 755 gnu3d.dem $RPM_BUILD_ROOT%{_bindir}
-install -m 755 gengnuplot.sh $RPM_BUILD_ROOT%{_bindir}
-install -m 755 fileop $RPM_BUILD_ROOT%{_bindir}
-install -m 755 Generate_Graphs $RPM_BUILD_ROOT%{_bindir}
+cd $RPM_BUILD_DIR/%{name}_%{version}/src/current/
+install -m 755 -d %{buildroot}%{_bindir}
+install -m 755 iozone %{buildroot}%{_bindir}
+install -m 755 gnu3d.dem %{buildroot}%{_bindir}
+install -m 755 gengnuplot.sh %{buildroot}%{_bindir}
+install -m 755 fileop %{buildroot}%{_bindir}
+install -m 755 Generate_Graphs %{buildroot}%{_bindir}
 
-cd $RPM_BUILD_DIR/%{name}_%version/docs
-install -m 755 -d $RPM_BUILD_ROOT%{_mandir}/man1
-install -m 644 iozone.1 $RPM_BUILD_ROOT%{_mandir}/man1
-
-
+cd $RPM_BUILD_DIR/%{name}_%{version}/docs
+install -m 755 -d %{buildroot}%{_mandir}/man1
+install -m 644 iozone.1 %{buildroot}%{_mandir}/man1
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
-%defattr (0644,root,root,755) 
+%defattr (-,root,root)
 %doc docs/*.gz src/current/Gnuplot.txt docs/*.pdf docs/*.doc
 %defattr (-,root,root)
 %{_bindir}/*
 %{_mandir}/man1/*
-
-
