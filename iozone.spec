@@ -1,11 +1,11 @@
 %define name iozone3
 %define version 287
-%define release %mkrel 4
+%define release %mkrel 5
 
 Summary:	Filesystem characterization & benchmark tool
 Name:		iozone3
 Version:	326
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	Public Domain
 Group:		Monitoring
 URL:		http://www.iozone.org/
