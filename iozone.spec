@@ -48,3 +48,47 @@ rm -rf %{buildroot}
 %defattr (-,root,root)
 %{_bindir}/*
 %{_mandir}/man1/*
+
+
+%changelog
+* Fri Nov 04 2011 Andrey Bondrov <abondrov@mandriva.org> 397-1
++ Revision: 717624
+- New version 397
+
+  + Stéphane Téletchéa <steletch@mandriva.org>
+    - update to new version 373
+
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 326-2mdv2011.0
++ Revision: 619675
+- the mass rebuild of 2010.0 packages
+
+* Mon Sep 14 2009 Tomasz Pawel Gajc <tpg@mandriva.org> 326-1mdv2010.0
++ Revision: 440691
+- update to new version 326
+- compile with %%optflags and %%ldflags
+- spec file clean
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 287-4mdv2010.0
++ Revision: 429516
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 287-3mdv2009.0
++ Revision: 247242
+- rebuild
+
+* Tue Feb 26 2008 Erwan Velu <erwan@mandriva.org> 287-1mdv2008.1
++ Revision: 175414
+- release 287
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - fix no-buildroot-tag
+
+* Mon Dec 17 2007 Thierry Vignaud <tv@mandriva.org> 281-1mdv2008.1
++ Revision: 131599
+- kill re-definition of %%buildroot on Pixel's request
+
+
+* Thu Feb 01 2007 Lenny Cartier <lenny@mandriva.com> 281-1mdv2007.0
++ Revision: 115813
+- Import iozone3
+
