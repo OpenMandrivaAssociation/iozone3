@@ -4,12 +4,12 @@
 
 Summary:	Filesystem characterization & benchmark tool
 Name:		%{name}
-Version:	%{version}
-Release:	%mkrel 1
+Version:	414
+Release:	1
 License:	Public Domain
 Group:		Monitoring
 URL:		http://www.iozone.org/
-Source0:	http://www.iozone.org/src/current/%{name}_%{version}.tar.bz2
+Source0:	http://www.iozone.org/src/current/iozone3_414.tar
 Obsoletes:	iozone < %{version}
 Provides:	iozone
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -91,4 +91,5 @@ rm -rf %{buildroot}
 * Thu Feb 01 2007 Lenny Cartier <lenny@mandriva.com> 281-1mdv2007.0
 + Revision: 115813
 - Import iozone3
+
 
