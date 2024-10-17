@@ -8,7 +8,7 @@ Version:	414
 Release:	2
 License:	Public Domain
 Group:		Monitoring
-URL:		http://www.iozone.org/
+URL:		https://www.iozone.org/
 Source0:	http://www.iozone.org/src/current/iozone3_414.tar
 Obsoletes:	iozone < %{version}
 Provides:	iozone
