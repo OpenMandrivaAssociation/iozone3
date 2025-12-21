@@ -14,6 +14,7 @@ Obsoletes:	iozone < %{version}
 Provides:	iozone
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+BuildRequires:	make
 %description
 This program allows one to characterize the filesystem performance
 of vendors platform. It supports single stream, throughput, 
